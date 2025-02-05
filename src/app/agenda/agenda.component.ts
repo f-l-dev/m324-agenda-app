@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, model } from '@angular/core';
 
 @Component({
   selector: 'app-agenda',
@@ -9,18 +9,21 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AgendaComponent {
-    agenda: string[] = [];
-    newAgenda = '';
+    agenda = model<string[]>([]);
+    newAgenda = model<string>('');
+
+    agendaItems = computed(() => this.agenda())
 
     addAgenda() {
         if (this.newAgenda) {
-            this.agenda = [...this.agenda, this.newAgenda];
-            this.newAgenda = '';
+            this.agenda.set([...this.agenda(), this.newAgenda()]);
+            this.newAgenda.set('');
+            
         }
     }
 
     removeAgenda(index: number) {
-        this.agenda.splice(index, 1);
-        this.agenda = [...this.agenda];
+        this.agenda().splice(index, 1);
+        this.agenda.set([...this.agenda()]);
     }
 }

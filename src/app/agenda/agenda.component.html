@@ -5,7 +5,7 @@
     <button class="add-button" (click)="addAgenda()">Add</button>
 </div>
 <ul class="agenda-list">
-    @for (agendaItem of agenda; track $index) {
+    @for (agendaItem of agendaItems(); track $index) {
         <li class="agenda-item">
             {{ agendaItem }}
             <button class="remove-button" (click)="removeAgenda($index)">Remove</button>
