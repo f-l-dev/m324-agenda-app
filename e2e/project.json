@@ -5,5 +5,9 @@
   "sourceRoot": "e2e/src",
   "implicitDependencies": ["angular-agenda-app"],
   "// targets": "to see all targets run: nx show project e2e --web",
-  "targets": {}
+  "targets": {
+    "e2e": {
+      "executor": "@nx/playwright:playwright"
+    }
+  }
 }

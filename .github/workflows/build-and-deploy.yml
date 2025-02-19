@@ -33,8 +33,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Run unit tests
+        run: npm run test
+
       - name: Build Angular application
         run: npm run build
+
+      - name: Run e2e tests
+        run: npx nx e2e e2e
         
       - name: Setup Pages
         uses: actions/configure-pages@v5
