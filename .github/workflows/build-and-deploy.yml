@@ -43,7 +43,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           name: angular-app-artifacts
-          path: dist/angular-agenda-app
+          path: dist/angular-agenda-app/browser
 
   deploy:
     # Add a dependency to the build job
