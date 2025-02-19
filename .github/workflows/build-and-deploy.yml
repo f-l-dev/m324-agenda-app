@@ -45,9 +45,27 @@ jobs:
           name: angular-app-artifacts
           path: dist/angular-agenda-app/browser
 
+  unit-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run unit tests
+        run: npm run test
+
   deploy:
     # Add a dependency to the build job
-    needs: build
+    needs: [build, unit-tests]
 
     # Deploy to the github-pages environment
     environment:
@@ -56,6 +74,7 @@ jobs:
 
     # Specify runner + deployment step
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
