@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "deploy": "nx build --prod && npx angular-cli-ghpages --dir=dist/angular-agenda-app"
   },
   "private": true,
   "dependencies": {

@@ -89,6 +89,13 @@
         "staticFilePath": "dist/angular-agenda-app/browser",
         "spa": true
       }
+    },
+    "deploy": {
+      "executor": "ngx-gh-pages:deploy",
+      "options": {
+        "buildTarget": "angular-agenda-app:build:production",
+        "noBuild": false
+      }
     }
   }
 }
