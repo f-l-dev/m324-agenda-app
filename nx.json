@@ -14,7 +14,6 @@
     ],
     "sharedGlobals": ["{workspaceRoot}/azure-pipelines.yml"]
   },
-  "nxCloudId": "67a343e27698ac6bff605177",
   "targetDefaults": {
     "@angular-devkit/build-angular:application": {
       "cache": true,
