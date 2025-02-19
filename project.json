@@ -41,7 +41,7 @@
             }
           ],
           "outputHashing": "all",
-          "baseHref": "/angular-agenda-app/"
+          "baseHref": "/m324-agenda-app/"
         },
         "development": {
           "optimization": false,
