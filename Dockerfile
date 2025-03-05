@@ -11,7 +11,7 @@ RUN npm install
 COPY . .
 
 # Build the application
-RUN npm run build --configuration docker
+RUN npm run build --configuration=docker
 
 # Stage 2: Serve the built application
 FROM nginx:alpine
