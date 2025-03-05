@@ -17,6 +17,7 @@ RUN npm run build --configuration=docker
 FROM nginx:alpine
 
 # Copy the built application from the previous stage
+RUN rm -rf /usr/share/nginx/html/*
 COPY --from=build /app/dist/angular-agenda-app/browser /usr/share/nginx/html
 
 # Expose port 80
