@@ -12,6 +12,7 @@ on:
 permissions:
   pages: write      # to deploy to Pages
   id-token: write   # to verify the deployment originates from our repository
+  packages: write
 
 concurrency:
   group: "pages"
